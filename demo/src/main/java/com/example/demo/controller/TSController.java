@@ -20,7 +20,6 @@ public class TSController {
     @GetMapping("/api/v1/ts/{id}")
     public TS ts_one(@PathVariable Long id){
         return tsRepository.findById(id).orElse(null);
-
     }
 
 }
