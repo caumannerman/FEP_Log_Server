@@ -6,16 +6,15 @@ import javax.persistence.*;
 
 @ToString
 @Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @IdClass(Totalassetid.class)
 public class Totalasset {
-
     @Id
-    private String sissuecode;
-
+    private String sbookcode;
     @Id
     private String date;
     @Column

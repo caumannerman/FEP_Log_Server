@@ -8,7 +8,7 @@ import lombok.ToString;
 @ToString
 public class TotalassetDto {
 
-    private String sissuecode;
+    private String sbookcode;
     private String date;
     private int buyquantity;
     private Long buytotalprice;
@@ -18,6 +18,6 @@ public class TotalassetDto {
 
     //dto 객체를 db에 맵핑할 수 있게 Entity로 바꿔줌
     public Totalasset toEntity(){
-        return new Totalasset(sissuecode,date, buyquantity,buytotalprice,sellquantity,selltotalprice);
+        return new Totalasset(sbookcode,date, buyquantity,buytotalprice,sellquantity,selltotalprice);
     }
 }

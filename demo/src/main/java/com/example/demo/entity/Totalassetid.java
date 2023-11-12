@@ -14,6 +14,6 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Totalassetid implements Serializable {
-    private String sissuecode;
+    private String sbookcode;
     private String date;
 }
