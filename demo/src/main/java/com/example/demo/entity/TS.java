@@ -17,6 +17,12 @@ public class TS {
     private Long id;
 
     @Column
+    private String visited;
+
+    @Column
+    private String date;
+
+    @Column
     private String sLength;
 
     @Column
@@ -61,4 +67,6 @@ public class TS {
     private String sBalanceType;
     @Column
     private String sdontknow;
+
+
 }

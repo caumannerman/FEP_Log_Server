@@ -14,6 +14,8 @@ import javax.persistence.Id;
 @ToString
 public class TSDto {
 
+    private String visited;
+    private String date;
     private String sLength;
     private String sTrCode;
     private String sRpCode;
@@ -39,7 +41,7 @@ public class TSDto {
 
     //dto 객체를 db에 맵핑할 수 있게 Entity로 바꿔줌
     public TS toEntity(){
-        return new TS(null, sLength, sTrCode, sRpCode,
+        return new TS(null,visited, date, sLength, sTrCode, sRpCode,
                 sSeq,sDataCnt,sMsgGb,sOrderNo,sIssueCode,sAcctNo,sTrdNo,sTrdPrice,sTrdQty,
                 sTrdType, sTrdTime, sNearTrdPrice, sFarTrdPrice, sSide, sBookCode, sFiller,
                 sPurpose,sBalanceType, sdontknow);
