@@ -22,7 +22,7 @@ public class TSController {
 
     @GetMapping("/api/v1/ts")
     public TS ts_one(@RequestParam String bookcode, @RequestParam String date){
-        return tsRepository.returnonets( date);
+        return tsRepository.returnonets( date, bookcode);
     }
 
     // Request의 body에서 받아온 json을 Post해줌
@@ -34,7 +34,7 @@ public class TSController {
     }
 
     @PatchMapping("/api/v1/ts/{id}")
-    public ResponseEntity<TS> update(@PathVariable Long id, @RequestBody TSDto dto){
+    public ResponseEntity<TS> update2(@PathVariable Long id, @RequestBody TSDto dto){
 
         //수정용ㅇ entity 생성
         TS ts = dto.toEntity();

@@ -11,6 +11,6 @@ import java.util.ArrayList;
 
 public interface TSRepository extends CrudRepository<TS, Long> {
 
-    @Query(value = "SELECT * from ts where date = ?1 limit 1", nativeQuery = true)
-    TS returnonets( String date);
+    @Query(value = "SELECT * from ts where date = ?1 and s_book_code = ?2 limit 1", nativeQuery = true)
+    TS returnonets( String date, String bookcode);
 }
