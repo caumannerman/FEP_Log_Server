@@ -22,6 +22,8 @@ public class Totalasset {
     @Column
     private int quantity;
     @Column
-    private Double avgprice;
+    private Long pricesum;
+    @Column
+    private Long realprofit;
 
 }

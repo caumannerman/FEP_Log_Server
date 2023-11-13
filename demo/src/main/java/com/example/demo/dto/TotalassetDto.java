@@ -15,11 +15,11 @@ public class TotalassetDto {
     private String date;
     private String sbookcode;
     private int quantity;
-    private Double avgprice;
-
+    private Long pricesum;
+    private Long realprofit;
 
     //dto 객체를 db에 맵핑할 수 있게 Entity로 바꿔줌
     public Totalasset toEntity(){
-        return new Totalasset(sissuecode,date, sbookcode,quantity,avgprice);
+        return new Totalasset(sissuecode,date, sbookcode,quantity,pricesum, realprofit);
     }
 }
