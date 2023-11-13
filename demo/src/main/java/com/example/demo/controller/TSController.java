@@ -53,6 +53,7 @@ public class TSController {
     @GetMapping("/api/v1/get/visited30")
     public List<TS> get_notvisited30(@RequestParam String bookcode, @RequestParam String date){
         return tsRepository.get_visited_logs(date, bookcode);
+
     }
 
 
