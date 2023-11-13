@@ -18,6 +18,6 @@ public class CurrentpriceDto {
 
     //dto 객체를 db에 맵핑할 수 있게 Entity로 바꿔줌
     public Currentprice toEntity(){
-        return new Currentprice(issuecode,date, time,price);
+        return new Currentprice(null,issuecode,date, time,price);
     }
 }

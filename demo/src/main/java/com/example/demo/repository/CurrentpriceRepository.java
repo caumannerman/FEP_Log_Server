@@ -8,6 +8,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.ArrayList;
 
 
-public interface CurrentpriceRepository extends CrudRepository<Currentprice, Currentpriceid> {
+public interface CurrentpriceRepository extends CrudRepository<Currentprice, Long> {
 
 }

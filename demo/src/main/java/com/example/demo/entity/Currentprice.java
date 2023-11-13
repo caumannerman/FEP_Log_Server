@@ -14,12 +14,16 @@ import javax.persistence.*;
 public class Currentprice {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column
     private String issuecode;
 
-    @Id
+    @Column
     private String date;
 
-    @Id
+    @Column
     private String time;
 
     @Column
