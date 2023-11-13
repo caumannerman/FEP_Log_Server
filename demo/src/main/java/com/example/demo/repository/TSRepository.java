@@ -12,9 +12,17 @@ import java.util.ArrayList;
 
 public interface TSRepository extends CrudRepository<TS, Long> {
 
-    //API 1번. parameter로 받은 bookcode와 date가 일치하고 visited = "0"(아직 안 받은 로그)인 row 중 id가 가장 작은 것(시간상 가장 오래된 로그) 하나만 return
-    @Query(value = "SELECT * FROM ts WHERE date = ?1 and s_book_code = ?2 and visited = '0' ORDER BY id ASC LIMIT 1", nativeQuery = true)
+    //API 1번. parameter로 받은 bookcode와 date가 일치하고 visited = "0"(아직 안 받은 로그)인 row 중 시간상 가장 오래된 로그 하나만 return
+    @Query(value = "SELECT * FROM ts WHERE date = ?1 and s_book_code = ?2 and visited = '0' ORDER BY s_trd_time ASC LIMIT 1", nativeQuery = true)
     TS returnonets( String date, String bookcode);
+
+    //API 1-1번. 현물만
+    @Query(value = "SELECT * FROM ts WHERE date = ?1 and s_book_code = ?2 and visited = '0' and s_issue_code like 'KR7%'  ORDER BY s_trd_time ASC LIMIT 1", nativeQuery = true)
+    TS returnonetsstock( String date, String bookcode);
+
+    //API 1-2번. 선물만
+    @Query(value = "SELECT * FROM ts WHERE date = ?1 and s_book_code = ?2 and visited = '0' and s_issue_code like 'KR4%' ORDER BY s_trd_time ASC LIMIT 1", nativeQuery = true)
+    TS returnonetsfutures( String date, String bookcode);
 
 
     // API 2번. 1번 api를 받고, id와 visited="1"만 json에 넣어 PATCH해주는 요청

@@ -28,6 +28,18 @@ public class TSController {
         return tsRepository.returnonets( date, bookcode);
     }
 
+    //API 1-1번. parameter로 받은 bookcode와 date가 일치하고 visited = "0"(아직 안 받은 로그)인 row 중 id가 가장 작은 것(시간상 가장 오래된 로그) 하나만 return
+    @GetMapping("/api/v1/get/notvisited1/stock")
+    public TS ts_one_stock(@RequestParam String bookcode, @RequestParam String date){
+        return tsRepository.returnonetsstock( date, bookcode);
+    }
+
+    //API 1번. parameter로 받은 bookcode와 date가 일치하고 visited = "0"(아직 안 받은 로그)인 row 중 id가 가장 작은 것(시간상 가장 오래된 로그) 하나만 return
+    @GetMapping("/api/v1/get/notvisited1/futures")
+    public TS ts_one_futures(@RequestParam String bookcode, @RequestParam String date){
+        return tsRepository.returnonetsfutures( date, bookcode);
+    }
+
 
 
     // API 2번. 1번 api를 받고, id와 visited="1"만 json에 넣어 PATCH해주는 요청
