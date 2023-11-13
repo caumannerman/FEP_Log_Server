@@ -4,20 +4,22 @@ import com.example.demo.entity.Totalasset;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 @AllArgsConstructor
 @ToString
 public class TotalassetDto {
 
-    private String sbookcode;
+    private String sissuecode;
     private String date;
-    private int buyquantity;
-    private Long buytotalprice;
-    private int sellquantity;
-    private Long selltotalprice;
+    private String sbookcode;
+    private int quantity;
+    private Double avgprice;
 
 
     //dto 객체를 db에 맵핑할 수 있게 Entity로 바꿔줌
     public Totalasset toEntity(){
-        return new Totalasset(sbookcode,date, buyquantity,buytotalprice,sellquantity,selltotalprice);
+        return new Totalasset(sissuecode,date, sbookcode,quantity,avgprice);
     }
 }

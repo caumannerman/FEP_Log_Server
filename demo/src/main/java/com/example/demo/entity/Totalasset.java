@@ -14,15 +14,14 @@ import javax.persistence.*;
 @IdClass(Totalassetid.class)
 public class Totalasset {
     @Id
-    private String sbookcode;
+    private String sissuecode;
     @Id
     private String date;
     @Column
-    private int buyquantity;
+    private String sbookcode;
     @Column
-    private Long buytotalprice;
+    private int quantity;
     @Column
-    private int sellquantity;
-    @Column
-    private Long selltotalprice;
+    private Double avgprice;
+
 }
