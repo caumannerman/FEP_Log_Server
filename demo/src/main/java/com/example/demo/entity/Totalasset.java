@@ -25,5 +25,7 @@ public class Totalasset {
     private Long pricesum;
     @Column
     private Long realprofit;
+    @Column
+    private String lastupdatetime;
 
 }

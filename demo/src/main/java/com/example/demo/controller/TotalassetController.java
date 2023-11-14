@@ -21,11 +21,13 @@ public class TotalassetController {
     // 현물 ,선물 따로따로 해야함. issuecode가 다르므로. bookcode 말고 issuecode로!
     @PatchMapping("/api/v1/patch/totalasset")
     public ResponseEntity<Totalasset> update(@RequestParam String issuecode, @RequestParam String date,@RequestParam String quantity,
-                                             @RequestParam String price,@RequestParam String side){
+                                             @RequestParam String price,@RequestParam String side, @RequestParam String time){
 
         //대상 엔티티 조회
         Totalasset target = totalassetRepository.get_oneasset(date, issuecode);
 
+        //방금 처리한 로그의 체결시간을 last update time으로 설정.
+        target.setLastupdatetime(time);
         //변경할 부분 변경..
         // price, quantity, side로 처리..
         //string으로 받아왔으니 각각 int, Long으로 바꿔줌. 뒷쪽 계산을 용이하게 하기 위해.

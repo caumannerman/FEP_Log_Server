@@ -10,7 +10,6 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@IdClass(Currentpriceid.class)
 public class Currentprice {
 
     @Id
