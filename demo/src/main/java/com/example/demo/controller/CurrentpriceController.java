@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.Currentprice;
 import com.example.demo.entity.TS;
 import com.example.demo.repository.CurrentpriceRepository;
 import com.example.demo.repository.TSRepository;
@@ -23,7 +24,7 @@ public class CurrentpriceController {
 
     //API 6번. issuecode,date, time을 parameter로 받아와, 그 시각 보다 크면서 가장 가까운 현재가
     @GetMapping("/api/v1/get/currentprice")
-    public TS currentprice_one(@RequestParam String issuecode, @RequestParam String date, @RequestParam String time){
+    public Currentprice currentprice_one(@RequestParam String issuecode, @RequestParam String date, @RequestParam String time){
         return currentpriceRepository.returncp( issuecode, date, time);
     }
 
