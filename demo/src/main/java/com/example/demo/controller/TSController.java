@@ -59,17 +59,10 @@ public class TSController {
 
     }
 
-
-
     // API 3번. parameter로 받은 bookcode와 date가 일치하고 visited = "1"(받은 로그)인 row 30개를 return
     @GetMapping("/api/v1/get/visited30")
-    public List<TS> get_notvisited30(@RequestParam String bookcode, @RequestParam String date){
+    public List<TS> get_notvisited30(@RequestParam String bookcode, @RequestParam String date) {
         return tsRepository.get_visited_logs(date, bookcode);
 
     }
-
-
-
-
-
 }
