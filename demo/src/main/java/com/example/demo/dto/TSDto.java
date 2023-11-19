@@ -1,6 +1,4 @@
 package com.example.demo.dto;
-
-import com.example.demo.entity.Article;
 import com.example.demo.entity.TS;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
@@ -46,6 +44,4 @@ public class TSDto {
                 sTrdType, sTrdTime, sNearTrdPrice, sFarTrdPrice, sSide, sBookCode, sFiller,
                 sPurpose,sBalanceType, sdontknow);
     }
-
-
 }

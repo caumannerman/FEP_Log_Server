@@ -1,11 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.TSDto;
-import com.example.demo.dto.TotalassetDto;
-import com.example.demo.entity.Article;
 import com.example.demo.entity.TS;
-import com.example.demo.entity.Totalasset;
-import com.example.demo.repository.ArticleRepository;
 import com.example.demo.repository.TSRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
